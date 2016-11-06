@@ -22,13 +22,31 @@ soup = BeautifulSoup(a_surs, 'html.parser')
 # print (type(a_surs))
 # print (type(soup))
 
-# for x in soup.find_all("p"):
-# 	if "student" in x.text:
-# 		print (x)
+for x in soup.find_all(["a", "p", "h3"]):
+	if "student" in x.text:
+		try:
+			x.string = x.string.replace("student", "AMAZING student")
+			# print (x)
+		except:
+			pass
 
-for x in soup.
+for y in soup.find_all("img"):
+	if y['src'] == "logo2.png":
+		y['src'] = "media/logo.png"
+	else:
+		y['src'] = "media/bn_pic.jpeg"
+		# y['src'] = 
 
-print ("\nlol\n")
-# f_create_local_html = open("localhyper.html", "w")
-# f_create_local_html.write(str(text11111))
-# f_create_local_html.close()
+
+print ("\nayy lmao\n")
+f_create_local_html = open("localhyper.html", "w")
+f_create_local_html.write(str(soup))
+f_create_local_html.close()
+
+
+
+
+
+
+
+
