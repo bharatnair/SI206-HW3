@@ -47,12 +47,6 @@ for x in soup.find_all(string=re.compile("student")):
 	x.string.replace_with(x.string.replace("student", "AMAZING student"))
 	#x.replace_with(x.replace("student", "AMAZING student")) #does the same thing
 
-# print (soup(string=re.compile("student")))
-# print (type(soup(string=re.compile("student"))))
-# print ()
-# print (soup.find_all(string=re.compile("student")))
-# print (type(soup.find_all(string=re.compile("student"))))
-
 for y in soup.find_all("img"):
 	if y['src'] == "logo2.png":
 		y['src'] = "media/logo.png"
