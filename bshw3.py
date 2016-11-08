@@ -22,23 +22,45 @@ soup = BeautifulSoup(a_surs, 'html.parser')
 # print (type(a_surs))
 # print (type(soup))
 
-for x in soup.find_all(["a", "p", "h3"]):
-	if "student" in x.text:
-		try:
-			x.string = x.string.replace("student", "AMAZING student")
-			# print (x)
-		except:
-			pass
+########for x in soup(True, string=re.compile("student")):
+	# print (x.name)
+	# print (type(x))
+	# print (x.string)
+	# print (type(x.string))
+
+	######## x.string = x.string.replace("student", "AMAZING student")
+	#####Only replace some instances of student with AMAZING student.... why?
+
+# for x in soup(string=re.compile("student")):
+# 	# if "student" in x.text:
+# 	# print (x.text)
+# # 	# try:
+# 	print (x)
+# 	print (type(x))
+	# x.name.string = "lol"
+	# # x.string = x.string.replace("student", "AMAZING student")
+	# print (x.string)
+	# except:
+	# 	continue
+
+for x in soup.find_all(string=re.compile("student")):
+	x.string.replace_with(x.string.replace("student", "AMAZING student"))
+	#x.replace_with(x.replace("student", "AMAZING student")) #does the same thing
+
+# print (soup(string=re.compile("student")))
+# print (type(soup(string=re.compile("student"))))
+# print ()
+# print (soup.find_all(string=re.compile("student")))
+# print (type(soup.find_all(string=re.compile("student"))))
 
 for y in soup.find_all("img"):
 	if y['src'] == "logo2.png":
 		y['src'] = "media/logo.png"
 	else:
 		y['src'] = "media/bn_pic.jpeg"
-		# y['src'] = 
 
 
-print ("\nayy lmao\n")
+print ("\nding dong\n")
 f_create_local_html = open("localhyper.html", "w")
 f_create_local_html.write(str(soup))
 f_create_local_html.close()
