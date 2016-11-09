@@ -7,6 +7,10 @@
 
 # Be prepared to change the search term during demo.
 
+print ()
+print ("*** SI 206 - HW 3 - Twitter (B) Program (Search tweets with a term and conduct sentiment analysis) ***")
+print ("\nName: Bharat Nair\nUniqname: bnair")
+
 import tweepy
 from textblob import TextBlob
 
@@ -31,12 +35,12 @@ pol_sum = 0
 pol_count = 0
 
 # print (type(public_tweets))
-print ("\n**** start ****\n")
+print ("\n*^*^*\n")
 
 for tweet in public_tweets:
 	print(tweet.text)
 	analysis = TextBlob(tweet.text)
-	print(analysis.sentiment)
+	# print(analysis.sentiment)
 	subj_sum += analysis.sentiment.subjectivity
 	pol_sum += analysis.sentiment.polarity
 	subj_count +=1
@@ -51,4 +55,4 @@ else:
 	print("Average polarity: " + str(pol_sum/pol_count))
 print ()
 
-print ("\n**** end ****\n")
+print ("\n*_*_*\n")
