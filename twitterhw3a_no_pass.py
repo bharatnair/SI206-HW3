@@ -4,6 +4,10 @@
 
 # You will demo this live for grading.
 
+print ()
+print ("*** SI 206 - HW 3 - Twitter (A) Program (Upload picture and status to twitter) ***")
+print ("\nName: Bharat Nair\nUniqname: bnair")
+
 import tweepy
 
 # Unique code from Twitter
@@ -26,4 +30,4 @@ try:
 	api.update_with_media(filename = fn, status = stts)
 	print ("\nStatus with image and text successfully uploaded to Twitter!\n")
 except:
-	print ("Oh no, status was NOT uploaded!\n")
+	print ("\nOh no, status was NOT uploaded!\n")
