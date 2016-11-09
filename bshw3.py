@@ -11,6 +11,10 @@
 # Deliverables
 # Make sure the new page is uploaded to your GitHub account.
 
+print ()
+print ("*** SI 206 - HW 3 - BeautifulSoup Program ***")
+print ("\nName: Bharat Nair\nUniqname: bnair")
+
 from bs4 import BeautifulSoup
 import urllib.request, urllib.parse, urllib.error
 import re
